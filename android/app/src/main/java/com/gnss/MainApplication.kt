@@ -18,7 +18,6 @@ class MainApplication : Application(), ReactApplication {
         override fun getPackages(): List<ReactPackage> =
             PackageList(this).packages.apply {
               add(GNSSPackage())
-              add(GPSPackage())
             }
 
         override fun getJSMainModuleName(): String = "index"
