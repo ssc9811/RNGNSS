@@ -349,7 +349,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/parser@npm:^7.1.0, @babel/parser@npm:^7.13.16, @babel/parser@npm:^7.14.7, @babel/parser@npm:^7.20.0, @babel/parser@npm:^7.20.7, @babel/parser@npm:^7.23.9, @babel/parser@npm:^7.24.7, @babel/parser@npm:^7.24.8":
+"@babel/parser@npm:^7.1.0, @babel/parser@npm:^7.13.16, @babel/parser@npm:^7.14.0, @babel/parser@npm:^7.14.7, @babel/parser@npm:^7.20.0, @babel/parser@npm:^7.20.7, @babel/parser@npm:^7.23.9, @babel/parser@npm:^7.24.7, @babel/parser@npm:^7.24.8":
   version: 7.24.8
   resolution: "@babel/parser@npm:7.24.8"
   bin:
@@ -4938,6 +4938,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"flow-parser@npm:^0.121.0":
+  version: 0.121.0
+  resolution: "flow-parser@npm:0.121.0"
+  checksum: 2d9a9724b903f4c2eae63f8e1442f97c8284516197bebd746cdbba938ff0a17f2dd7a2bc74ca9a987556af0f43d31a793b251ae30660d6b5e914f0c2e8501d2d
+  languageName: node
+  linkType: hard
+
 "for-each@npm:^0.3.3":
   version: 0.3.3
   resolution: "for-each@npm:0.3.3"
@@ -5204,6 +5211,7 @@ __metadata:
     prettier: 2.8.8
     react: 18.2.0
     react-native: 0.74.3
+    react-native-codegen: ^0.70.7
     react-native-permissions: ^4.1.5
     react-test-renderer: 18.2.0
     typescript: 5.0.4
@@ -7943,6 +7951,18 @@ __metadata:
   version: 17.0.2
   resolution: "react-is@npm:17.0.2"
   checksum: 9d6d111d8990dc98bc5402c1266a808b0459b5d54830bbea24c12d908b536df7883f268a7868cfaedde3dd9d4e0d574db456f84d2e6df9c4526f99bb4b5344d8
+  languageName: node
+  linkType: hard
+
+"react-native-codegen@npm:^0.70.7":
+  version: 0.70.7
+  resolution: "react-native-codegen@npm:0.70.7"
+  dependencies:
+    "@babel/parser": ^7.14.0
+    flow-parser: ^0.121.0
+    jscodeshift: ^0.14.0
+    nullthrows: ^1.1.1
+  checksum: dfbf05ea6c5bcdff09ed2288919d8270bdb8ab78a7a973f2dbd970e63357bdf9fee05d95a2c9bee3795a609332e5ca37f667384ebe1cca61e4cb8f81e5aeabba
   languageName: node
   linkType: hard
 
