@@ -18,7 +18,6 @@ import androidx.core.content.ContextCompat
 import android.content.pm.PackageManager
 import android.util.Log
 import com.facebook.react.bridge.WritableMap
-import com.facebook.react.bridge.WritableArray
 
 class GNSSModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) {
     private val locationManager: LocationManager = reactContext.getSystemService(Context.LOCATION_SERVICE) as LocationManager
