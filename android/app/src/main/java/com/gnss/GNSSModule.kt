@@ -26,7 +26,8 @@ class GNSSModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaMo
     // 위치 변경을 감지하는 리스너
     private val locationListener: LocationListener = object : LocationListener {
         override fun onLocationChanged(location: Location) {
-            Log.d("GNSSModule", "Location changed: ${location.latitude}, ${location.longitude}")
+            Log.d("GNSSModule", "Location changed: ${location}, ${location.latitude}, ${location.longitude}")
+            Log.d("GNSSModule", "Location changed: ${location}")
             // 위치 변경 이벤트를 JS로 전송
             sendEvent("onLocationChanged", Arguments.createMap().apply {
                 putDouble("latitude", location.latitude)
@@ -115,16 +116,17 @@ class GNSSModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaMo
                 promise.reject("Permission not granted")
                 return
             }
-
             // 위치 업데이트 요청
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000L, 1f, locationListener)
             val location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER)
                 ?: locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER)
             if (location != null) {
+                Log.d("GNSSModule", "Location 정보, ${location}, ${location.latitude}, ${location.longitude}")
                 val locationMap = Arguments.createMap().apply {
                     putDouble("latitude", location.latitude)
                     putDouble("longitude", location.longitude)
                 }
+                Log.d("GNSSModule", "locationMap 정보, ${locationMap}")
                 promise.resolve(locationMap)
             } else {
                 Log.e("GNSSModule", "Location not available")
